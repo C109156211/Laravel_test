@@ -3,20 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Shop\Entity\User;
+use Hash;
 
 class UserAuthController extends Controller
 {
-
-    // public function Test()
-    // {
-    //     $binding = [
-    //         'title' => '註冊',
-    //         'sub_title' => '123456',
-    //     ];
-
-    //     return view('auth.test',$binding);
-    // }
-
     public function Login()
     {
         $binding = [
@@ -39,6 +30,26 @@ class UserAuthController extends Controller
         return view( 'auth.signup' , $binding);
     }
 
+    public function SignUpProcess()
+    {
+        $form_data = request()->all();
+        // dd($form_data );
+        if($form_data['password'] == "" || $form_data['email']== "" || $form_data['name'] == "" ){
+            return redirect('/user/auth/signup')
+            ->withInput()
+            ->withErrors('資料不齊全');
+        }
+        else{
+            $user = User::create([
+                'email' => $form_data['email'],
+                'password' => Hash::make($form_data['password']),
+                'type' => $form_data['type'],
+                'nickname' => $form_data['name'],
+            ]);
+            dd($user);
+        }
+    }
+
     public function SignIn()
     {
         $binding = [
@@ -47,10 +58,5 @@ class UserAuthController extends Controller
         return view( 'auth.signin' , $binding);
     }
 
-    public function SignUpProcess()
-    {
-        $form_data = request() -> all();
-        dd($form_data);
-    }
 
 }

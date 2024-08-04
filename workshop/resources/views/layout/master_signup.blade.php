@@ -108,16 +108,16 @@
 									</div>
 									<div class="col-12 form-group">
 										<label>帳號:</label>
-										<input type="id" name="id" id="id" class="form-control form-control-lg required" value="" placeholder="user@company.com">
+										<input type="text" name="email" id="email" class="form-control form-control-lg required" value="" placeholder="user@company.com">
 									</div>
 									<div class="col-12 form-group">
 										<label>密碼:</label>
-										<input type="password" name="password" id="password" class="form-control form-control-lg required" value="" placeholder="輸入密碼" maxlength="12">
+										<input type="password" name="password" id="password" class="form-control form-control-lg required" value="" placeholder="輸入密碼" maxlength="50">
 									</div>
 									<div class="col-12 form-group">
 										<label>帳號類型:</label><br>
-										<input type="radio" name="type" id="type" value="user">一般使用者
-										<input type="radio" name="type" id="type" value="manager">管理者
+										<input type="radio" name="type" id="type" value="u">一般使用者
+										<input type="radio" name="type" id="type" value="m">管理者
 									</div>
 
 									<!-- <div class="col-12 d-none">
