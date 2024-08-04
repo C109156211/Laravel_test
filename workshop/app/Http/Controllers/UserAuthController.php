@@ -46,4 +46,11 @@ class UserAuthController extends Controller
         ];
         return view( 'auth.signin' , $binding);
     }
+
+    public function SignUpProcess()
+    {
+        $form_data = request() -> all();
+        dd($form_data);
+    }
+
 }
