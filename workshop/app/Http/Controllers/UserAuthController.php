@@ -6,9 +6,23 @@ use App\Http\Controllers\Controller;
 
 class UserAuthController extends Controller
 {
+
+    // public function Test()
+    // {
+    //     $binding = [
+    //         'title' => '註冊',
+    //         'sub_title' => '123456',
+    //     ];
+
+    //     return view('auth.test',$binding);
+    // }
+
     public function Login()
     {
-        return '登入測試';
+        $binding = [
+            'title' => '登入',
+        ];
+        return view( 'auth.login' , $binding);
     }
 
     public function profile($id)
