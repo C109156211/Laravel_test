@@ -88,6 +88,7 @@
 		<section id="slider" class="slider-element min-vh-100 include-header" style="background: linear-gradient(rgba(0,0,0,.8), rgba(0,0,0,.6)), url('images/blocks/preview/schedule.jpg') no-repeat center center/ cover;">
 			<div class="slider-inner">
 
+
 				<div class="row justify-content-center align-items-center h-100">
 
 					<div class="col-lg-5 col-sm-7 col-10">
@@ -97,6 +98,16 @@
 						</div>
 
 						<div>
+							<div class="form-result">
+								@if( $errors and count($errors))
+									<ul class="iconlist" data-username="envato" data-count="2">
+									@foreach( $errors->all() as $err )
+										<div class="alert text-center alert-danger"> {{$err}} </div>
+									@endforeach
+									</ul>
+								@endif 
+							</div>
+
 
 							<form action="/user/auth/signup" method="post" >
 								@csrf
@@ -104,20 +115,35 @@
 								<div class="row form-section px-4 py-5 bg-white rounded shadow-lg">
 									<div class="col-12 form-group">
 										<label>姓名:</label>
-										<input type="text" name="name" id="name" class="form-control form-control-lg required" value="" placeholder="John Doe">
+										<input type="text" name="name" id="name" class="form-control form-control-lg required" value="{{old('name')}}" placeholder="John Doe">
 									</div>
 									<div class="col-12 form-group">
 										<label>帳號:</label>
-										<input type="text" name="email" id="email" class="form-control form-control-lg required" value="" placeholder="user@company.com">
+										<input type="text" name="email" id="email" class="form-control form-control-lg required" value="{{old('email')}}" placeholder="user@company.com">
 									</div>
 									<div class="col-12 form-group">
 										<label>密碼:</label>
-										<input type="password" name="password" id="password" class="form-control form-control-lg required" value="" placeholder="輸入密碼" maxlength="50">
+										<input type="password" name="password" id="password" class="form-control form-control-lg required" value="{{old('password')}}" placeholder="輸入密碼" maxlength="50">
 									</div>
 									<div class="col-12 form-group">
-										<label>帳號類型:</label><br>
-										<input type="radio" name="type" id="type" value="u">一般使用者
-										<input type="radio" name="type" id="type" value="m">管理者
+										<div>
+											<label>帳號類型:</label><br>
+											@if ( old('type') == 'u' )
+											<input type="radio" name="type" id="type" value="u" checked>
+											@else									
+											<input type="radio" name="type" id="type" value="u">
+											@endif
+											<label for="type">一般使用者</label>
+										</div>
+										<div>
+											@if ( old('type') == 'm' )
+											<input type="radio" name="type" id="type" value="m" checked>
+											@else										
+											<input type="radio" name="type" id="type" value="m">
+											@endif
+											<label for="type">管理者</label>
+										</div>
+
 									</div>
 
 									<!-- <div class="col-12 d-none">

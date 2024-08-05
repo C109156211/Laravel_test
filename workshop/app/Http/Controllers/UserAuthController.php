@@ -25,8 +25,8 @@ class UserAuthController extends Controller
     {
         $binding = [
             'title' => '註冊',
-            'sub_title' => '123456',
-        ];
+            'sub_title' => '測試',
+        ]; 
         return view( 'auth.signup' , $binding);
     }
 
@@ -37,7 +37,7 @@ class UserAuthController extends Controller
         if($form_data['password'] == "" || $form_data['email']== "" || $form_data['name'] == "" ){
             return redirect('/user/auth/signup')
             ->withInput()
-            ->withErrors('資料不齊全');
+            ->withErrors(['資料不齊全','請檢查所有欄位並填滿']);
         }
         else{
             $user = User::create([
