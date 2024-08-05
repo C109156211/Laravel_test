@@ -10,19 +10,32 @@ use Mail;
 
 class UserAuthController extends Controller
 {
+
+    // 登入
     public function Login()
     {
-        $binding = [
-            'title' => '登入',
-        ];
-        return view( 'auth.login' , $binding);
+        return view('auth.login');
     }
 
-
+    // 登入判斷
     public function LoginProcess()
     {
         $form_data = request()->all();
-        dd($form_data);
+        // dd($form_data);
+        $user = User::where('email', $form_data['email'])->FirstOrFail();
+        if (Hash::check($form_data['password'], $user->password)){
+            echo '登入成功';
+            session()->put('user_id', $user->id);
+            session()->put('user_email', $user->email);
+            # 導向到首頁
+            return redirect('/user/auth/home');
+        }else{
+            echo '登入失敗';
+            # 導向到登入頁
+            return redirect('/user/auth/login')
+                ->withInput()
+                ->withErrors(['無此帳號','帳號密碼錯誤']);
+        }
     }
 
 
@@ -31,6 +44,8 @@ class UserAuthController extends Controller
         return 'my id : '.$id;
     }
 
+
+    // 註冊
     public function SignUp()
     {
         $binding = [
@@ -40,6 +55,8 @@ class UserAuthController extends Controller
         return view( 'auth.signup' , $binding);
     }
 
+    
+    // 註冊判斷
     public function SignUpProcess()
     {
         $form_data = request()->all();
@@ -50,10 +67,12 @@ class UserAuthController extends Controller
             ->withErrors(['資料不齊全','請檢查所有欄位並填滿']);
         }
         else{
-            if ($form_data['password'] == "" || $form_data['email'] == "" || $form_data['name'] == "" ){
+            // 判斷帳號是否重複
+            $user = User::where('email', $form_data['email']) -> first();
+            if (!is_null($user)){
                 return redirect('/user/auth/signup')
                 ->withInput()
-                ->withErrors('Email已存在');
+                ->withErrors(['此帳號已被註冊','請更換帳號']);
             }
 
             $user = User::create([
@@ -71,17 +90,27 @@ class UserAuthController extends Controller
                     ->subject('Laravel 8 Mail Test');
             });
 
-            dd($user);
+            return redirect('/user/auth/login');
         }
     }
 
-    public function SignIn()
+    // 首頁
+    public function Home()
     {
+        // return view('auth.home');
+        // return redirect('/user/auth/home');
         $binding = [
-            'title' => '登入',
-        ];
-        return view( 'auth.signin' , $binding);
+            'title' => '首頁',
+        ]; 
+        return view( 'auth.home' , $binding);
+
     }
 
 
+    // 登出
+    public function SignOut()
+    {
+        session()->forget('user_id');
+        return redirect('/user/auth/login');
+    }
 }

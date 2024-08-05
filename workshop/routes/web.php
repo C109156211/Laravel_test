@@ -11,14 +11,23 @@ Route::get('/', function () {
 Route::group(['prefix' => 'user'], function () {
     Route::group(['prefix' => 'auth'], function () {
 
-        Route::get('login', 'App\Http\Controllers\UserAuthController@Login');
+        // 登入
+        Route::get('login', 'App\Http\Controllers\UserAuthController@Login')->name('user.auth.login');
         Route::post('login', 'App\Http\Controllers\UserAuthController@LoginProcess');
 
-        Route::get('signup', 'App\Http\Controllers\UserAuthController@SignUp');
+        // 註冊
+        Route::get('signup', 'App\Http\Controllers\UserAuthController@SignUp')->name('user.auth.signup');
         Route::post('signup', 'App\Http\Controllers\UserAuthController@SignUpProcess');
 
         Route::get('profile/{id}', 'App\Http\Controllers\UserAuthController@profile');
         Route::get('signin', 'App\Http\Controllers\UserAuthController@SignIn');
+
+        // 首頁
+        Route::get('home', 'App\Http\Controllers\UserAuthController@Home')->name('user.auth.home');
+
+        // 登出
+        Route::get('signout', 'App\Http\Controllers\UserAuthController@SignOut')->name('user.auth.signout');
+
     });
 });
 
