@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AuthUserAdminMiddleware;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,6 +35,10 @@ Route::group(['prefix' => 'user'], function () {
 
 // 建立merchandise群組路由
 Route::group(['prefix' => 'merchandise'], function () {
-    Route::get('{merchandise_id}', 'App\Http\Controllers\MerchandiseController@MerchandiseItemPage');
-});
+    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->Middleware(AuthUserAdminMiddleware::class);
 
+    Route::group(['prefix' => '{merchandise_id}'], function () {
+        Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit');
+        Route::put('/', 'MerchandiseController@merchandiseItemEditProcess');
+    });
+});

@@ -97,8 +97,6 @@ class UserAuthController extends Controller
     // 首頁
     public function Home()
     {
-        // return view('auth.home');
-        // return redirect('/user/auth/home');
         $binding = [
             'title' => '首頁',
         ]; 
