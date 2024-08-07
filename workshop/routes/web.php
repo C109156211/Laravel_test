@@ -35,10 +35,15 @@ Route::group(['prefix' => 'user'], function () {
 
 // 建立merchandise群組路由
 Route::group(['prefix' => 'merchandise'], function () {
-    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->Middleware(AuthUserAdminMiddleware::class);
 
+    // 商品管理
+    Route::get('manage', 'App\Http\Controllers\MerchandiseController@MerchandiseManage');
+    Route::get('create', 'App\Http\Controllers\MerchandiseController@MerchandiseCreate')->middleware(AuthUserAdminMiddleware::class);
+    
     Route::group(['prefix' => '{merchandise_id}'], function () {
-        Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit');
-        Route::put('/', 'MerchandiseController@merchandiseItemEditProcess');
+        Route::get('edit', 'App\Http\Controllers\MerchandiseController@MerchandiseEdit')->middleware(AuthUserAdminMiddleware::class);
+        Route::put('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
+        Route::get('delete', 'App\Http\Controllers\MerchandiseController@MerchandiseDelete')->middleware(AuthUserAdminMiddleware::class);
+
     });
 });

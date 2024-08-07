@@ -79,3 +79,10 @@ php artisan migrate
 
 1.註冊成功後跳轉登入畫面
 2.註冊時判斷帳號是否重複
+
+中介曾
+權限判斷的控制(如:管理者才能編輯商品)
+route直接用
+
+
+*test_manager 123456@gmail.com
