@@ -46,4 +46,7 @@ Route::group(['prefix' => 'merchandise'], function () {
         Route::put('/', 'App\Http\Controllers\MerchandiseController@MerchandiseEditProcess');
         Route::get('delete', 'App\Http\Controllers\MerchandiseController@MerchandiseDelete')->middleware(AuthUserAdminMiddleware::class);
     });
+
+    // 圖片上傳
+    Route::post('upload', [App\Http\Controllers\MerchandiseController::class, 'uploadImage'])->name('merchandise.upload');
 });
