@@ -31,23 +31,19 @@ class MerchandiseController extends Controller
         // 使用迴圈檢查每個欄位是否填寫
         foreach ($required_fields as $field => $label) {
             if (empty($form_data[$field])) {
-                $errors[] = $label . '為必填項';
+                return redirect('/merchadise/create')
+                ->withInput()
+                ->withErrors($errors[] = $label . '為必填項');
             }
-        }
-    
-        // 如果有錯誤，則返回錯誤訊息
-        if (!empty($errors)) {
-            return redirect()->back()
-            ->withInput()
-            ->withErrors($errors);
-        }
-        
 
-        $binding = [
-            'title' => '新增商品',
-        ];
+            $binding = [
+                'title' => '新增商品',
+            ];
 
-        return view('merchandise.create', $binding);
+            return view('merchandise.create', $binding);
+
+        }
+
     }
 
     // 商品編輯處理

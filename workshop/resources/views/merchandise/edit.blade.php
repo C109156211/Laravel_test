@@ -38,7 +38,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="name">名稱 *</label>
+                                        <label for="name">名稱  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="name" id="name" class="form-control required" value="{{ old('name', $Merchandise->name) }}" placeholder="商品名稱">
@@ -48,7 +48,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="price">價格 *</label>
+                                        <label for="price">價格  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="price" id="price" class="form-control required" value="{{ old('price', $Merchandise->price) }}" placeholder="商品價格">
@@ -58,7 +58,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="amount">數量 *</label>
+                                        <label for="amount">數量  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-10">
                                         <input type="text" name="amount" id="amount" class="form-control required" value="{{ old('amount', $Merchandise->amount) }}" placeholder="商品總數量">
@@ -69,7 +69,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="product-form-status">狀態 *</label>
+                                        <label for="product-form-status">狀態  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="btn-group d-flex" role="group">
@@ -86,7 +86,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="type">類型 *</label>
+                                        <label for="type">類型  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
@@ -105,7 +105,7 @@
                             <div class="col-12 form-group">
                                 <div class="row">
                                     <div class="col-sm-2 col-form-label">
-                                        <label for="illustrate">說明 *</label>
+                                        <label for="illustrate">說明  <span class="required">*</span></label>
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
@@ -183,6 +183,15 @@
         align-items: center;
         background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
     }
+
+    .required + .required {
+            color: #CC5F5A; /* 星號顏色 */
+        }
+
+        .is-invalid {
+            border-color: #CC5F5A;
+        }
+
 </style>
 
 @endsection
