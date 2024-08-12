@@ -24,15 +24,17 @@ class MerchandiseController extends Controller
     // 商品編輯處理
     public function MerchandiseEditProcess($merchandise_id, Request $request)
     {
-        // 定義驗證規則
-        $rules = [
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'amount' => 'required|integer|min:1',
-            'status' => 'required|in:C,S', // C代表未上架, S代表銷售中
-            'type' => 'required|string',
-            'illustrate' => 'required|string',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:5120', // 圖片可選
+        // 接收輸入資料
+        $form_data = $request->all();
+        
+        // 定義需要檢查的欄位
+        $required_fields = [
+            'name' => '商品名稱',
+            'price' => '商品價格',
+            'amount' => '商品數量',
+            'status' => '商品狀態',
+            'type' => '商品類型',
+            'illustrate' => '商品說明',
         ];
 
         $errors = [];
