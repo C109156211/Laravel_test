@@ -13,7 +13,36 @@ class MerchandiseController extends Controller
     // 商品新增頁面
     public function MerchandiseCreate()
     {
+        // 接收輸入資料
+        $form_data = $request->all();
+
+        // 定義需要檢查的欄位
+        $required_fields = [
+            'name' => '商品名稱',
+            'price' => '商品價格',
+            'amount' => '商品數量',
+            'status' => '商品狀態',
+            'type' => '商品類型',
+            'illustrate' => '商品說明',
+        ];
+
+        $errors = [];
+
+        // 使用迴圈檢查每個欄位是否填寫
+        foreach ($required_fields as $field => $label) {
+            if (empty($form_data[$field])) {
+                $errors[] = $label . '為必填項';
+            }
+        }
+    
+        // 如果有錯誤，則返回錯誤訊息
+        if (!empty($errors)) {
+            return redirect()->back()
+            ->withInput()
+            ->withErrors($errors);
+        }
         
+
         $binding = [
             'title' => '新增商品',
         ];
@@ -26,7 +55,7 @@ class MerchandiseController extends Controller
     {
         // 接收輸入資料
         $form_data = $request->all();
-        
+
         // 定義需要檢查的欄位
         $required_fields = [
             'name' => '商品名稱',
