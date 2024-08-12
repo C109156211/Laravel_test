@@ -149,16 +149,15 @@
         function previewImage(event) {
             const reader = new FileReader();
             const previewImg = document.getElementById('preview-img');
-            const uploadIcon = document.getElementById('upload-icon');
 
             reader.onload = function() {
                 previewImg.src = reader.result;
                 previewImg.style.display = 'block';
-                uploadIcon.style.display = 'none';
             };
-            reader.readAsDataURL(event.target.files[0]);
-        }
 
+            reader.readAsDataURL(event.target.files[0]);
+        }       
+        
         // 加入圖片區域的動畫效果
         const imagePreviewContainer = document.getElementById('image-preview-container');
             imagePreviewContainer.addEventListener('mouseover', () => {
@@ -170,12 +169,12 @@
                 imagePreviewContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'; // 恢复原来的背景色
             });
 
-        // 當圖片預覽被點擊時，允許用戶重新上傳圖片
-        imagePreviewContainer.addEventListener('click', () => {
-            document.getElementById('image-upload').click();
-            const uploadIcon = document.getElementById('upload-icon');
-            uploadIcon.style.display = 'block';
-    });
+            // 當圖片預覽被點擊時，允許用戶重新上傳圖片
+            imagePreviewContainer.addEventListener('click', () => {
+                document.getElementById('image-upload').click();
+                const uploadIcon = document.getElementById('upload-icon');
+                uploadIcon.style.display = 'block';
+        });
 
     </script>
 
@@ -184,11 +183,17 @@
             font-size: 100px; /* 調整大小 */
             color: white;
             cursor: pointer;
+            position: absolute;
+            top: 50%; /* 確保加號在容器中間 */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2; /* 確保加號顯示在圖片之上 */
         }
 
         .image-container {
             background: rgba(255, 255, 255, 0.2); /* 灰底 */
             min-height: 400px; /* 保持固定高度 */
+            position: relative;
         }
 
         #image-preview-container {
@@ -197,15 +202,16 @@
             justify-content: center;
             align-items: center;
             background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-        }
+        }  
 
         .required + .required {
-            color: #CC5F5A; /* 星號顏色 */
-        }
+                color: #CC5F5A; /* 星號顏色 */
+            }
 
         .is-invalid {
             border-color: #CC5F5A;
         }
+
     </style>
 
 @endsection
