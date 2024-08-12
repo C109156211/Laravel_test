@@ -48,5 +48,5 @@ Route::group(['prefix' => 'merchandise'], function () {
     });
 
     // 圖片上傳
-    Route::post('upload', [App\Http\Controllers\MerchandiseController::class, 'uploadImage'])->name('merchandise.upload');
+    Route::post('upload', 'App\Http\Controllers\MerchandiseController@MerchandiseUploadImage')->middleware(AuthUserAdminMiddleware::class);
 });
