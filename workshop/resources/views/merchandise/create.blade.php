@@ -150,6 +150,7 @@
             const reader = new FileReader();
             const previewImg = document.getElementById('preview-img');
             const uploadIcon = document.getElementById('upload-icon');
+
             reader.onload = function() {
                 previewImg.src = reader.result;
                 previewImg.style.display = 'block';
@@ -158,37 +159,24 @@
             reader.readAsDataURL(event.target.files[0]);
         }
 
-        // 表單驗證函數
-        // function validateForm() {
-        //     let isValid = true;
-        //     const requiredFields = document.querySelectorAll('.required');
-            
-        //     requiredFields.forEach(field => {
-        //         if (!field.value || (field.type === 'radio' && !document.querySelector(`input[name="${field.name}"]:checked`))) {
-        //             isValid = false;
-        //             field.classList.add('is-invalid'); // 標記為無效
-        //         } else {
-        //             field.classList.remove('is-invalid'); // 移除無效標記
-        //         }
-        //     });
-
-        //     if (isValid) {
-        //         document.getElementById('product-form').submit(); // 提交表單
-        //     } else {
-        //         alert('請填寫所有必填字段');
-        //     }
-        // }
-
         // 加入圖片區域的動畫效果
         const imagePreviewContainer = document.getElementById('image-preview-container');
-        imagePreviewContainer.addEventListener('mouseover', () => {
-            imagePreviewContainer.style.transition = 'transform 0.3s ease';
-            imagePreviewContainer.style.transform = 'scale(1.05)';
-        });
+            imagePreviewContainer.addEventListener('mouseover', () => {
+                imagePreviewContainer.style.transition = 'background-color 0.3s ease';
+                imagePreviewContainer.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'; // 背景变淡且呈现白色
+            });
 
-        imagePreviewContainer.addEventListener('mouseout', () => {
-            imagePreviewContainer.style.transform = 'scale(1)';
-        });
+            imagePreviewContainer.addEventListener('mouseout', () => {
+                imagePreviewContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.3)'; // 恢复原来的背景色
+            });
+
+        // 當圖片預覽被點擊時，允許用戶重新上傳圖片
+        imagePreviewContainer.addEventListener('click', () => {
+            document.getElementById('image-upload').click();
+            const uploadIcon = document.getElementById('upload-icon');
+            uploadIcon.style.display = 'block';
+    });
+
     </script>
 
     <style>

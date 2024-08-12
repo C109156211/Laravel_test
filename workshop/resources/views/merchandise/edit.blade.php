@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <textarea name="illustrate" id="illustrate" class="form-control required" cols="30" rows="5" placeholder="商品說明">{{ old('illustrate', $Merchandise->illustrate) }}</textarea>
+                                            <textarea name="illustrate" id="illustrate" class="form-control required" cols="30" rows="5" placeholder="商品說明" value="{{ old('illustrate', $Merchandise->illustrate) }}"></textarea>
                                         </div>
                                     </div>
                                 </div>

@@ -11,44 +11,52 @@ use Image;
 class MerchandiseController extends Controller
 {
     // 商品新增頁面
-    public function MerchandiseCreate()
+    public function MerchandiseCreate(Request $request)
     {
         // 接收輸入資料
         $form_data = $request->all();
 
-        // // 定義需要檢查的欄位
-        // $required_fields = [
-        //     'name' => '商品名稱',
-        //     'price' => '商品價格',
-        //     'amount' => '商品數量',
-        //     'status' => '商品狀態',
-        //     'type' => '商品類型',
-        //     'illustrate' => '商品說明',
-        // ];
 
-        // $errors = [];
-
-        // 使用迴圈檢查每個欄位是否填寫
-        if( $form_data['name'] == "" || 
-            $form_data['price']== "" || 
-            $form_data['amount'] == "" ||
-            $form_data['status']== "" || 
-            $form_data['type'] == "" ||
-            $form_data['illustrate']== "")
-            {
-                return redirect('/merchadise/create')
-                ->withInput()
-                ->withErrors($errors[] = $label . '為必填項');
-        }
-        else {
-            $binding = [
-                'title' => '新增商品',
-            ];
-
-            return view('merchandise.create', $binding);
+        if($form_data['name'] == "" || $form_data['price'] == "" || $form_data['amount'] == "" || $form_data['status'] == "" || $form_data['type'] == "" || $form_data['illustrate'] == "") {
+            $errors = [];
+    
+            if($form_data['name'] == "") {
+                $errors[] = '名稱為必填項';
             }
-
+    
+            if($form_data['price'] == "") {
+                $errors[] = '價格為必填項';
+            }
+    
+            if($form_data['amount'] == "") {
+                $errors[] = '數量為必填項';
+            }
+    
+            if($form_data['status'] == "") {
+                $errors[] = '狀態為必填項';
+            }
+    
+            if($form_data['type'] == "") {
+                $errors[] = '類型為必填項';
+            }
+    
+            if($form_data['illustrate'] == "") {
+                $errors[] = '說明為必填項';
+            }
+    
+            return redirect('/merchandise/create')
+                ->withInput()
+                ->withErrors($errors);
         }
+    
+        // 成功邏輯處理
+        $binding = [
+            'title' => '新增商品',
+        ];
+
+        return view('merchandise.create', $binding);
+
+    }
 
     // 商品編輯處理
     public function MerchandiseEditProcess($merchandise_id, Request $request)
