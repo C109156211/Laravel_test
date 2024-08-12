@@ -159,25 +159,25 @@
         }
 
         // 表單驗證函數
-        function validateForm() {
-            let isValid = true;
-            const requiredFields = document.querySelectorAll('.required');
+        // function validateForm() {
+        //     let isValid = true;
+        //     const requiredFields = document.querySelectorAll('.required');
             
-            requiredFields.forEach(field => {
-                if (!field.value || (field.type === 'radio' && !document.querySelector(`input[name="${field.name}"]:checked`))) {
-                    isValid = false;
-                    field.classList.add('is-invalid'); // 標記為無效
-                } else {
-                    field.classList.remove('is-invalid'); // 移除無效標記
-                }
-            });
+        //     requiredFields.forEach(field => {
+        //         if (!field.value || (field.type === 'radio' && !document.querySelector(`input[name="${field.name}"]:checked`))) {
+        //             isValid = false;
+        //             field.classList.add('is-invalid'); // 標記為無效
+        //         } else {
+        //             field.classList.remove('is-invalid'); // 移除無效標記
+        //         }
+        //     });
 
-            if (isValid) {
-                document.getElementById('product-form').submit(); // 提交表單
-            } else {
-                alert('請填寫所有必填字段');
-            }
-        }
+        //     if (isValid) {
+        //         document.getElementById('product-form').submit(); // 提交表單
+        //     } else {
+        //         alert('請填寫所有必填字段');
+        //     }
+        // }
 
         // 加入圖片區域的動畫效果
         const imagePreviewContainer = document.getElementById('image-preview-container');
