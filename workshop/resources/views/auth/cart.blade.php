@@ -101,10 +101,10 @@
                                 </td>
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
-                                    <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
+                                    <div class="quantity" style="border-color: #3041;">
+                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="3" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
                                     </div>
                                 </td>
 
@@ -119,12 +119,12 @@
                                             <input type="text" value="" class="form-control rounded-0 bg-color-2 text-center text-md-start" placeholder="輸入優惠代碼..">
                                         </div>
                                         <div class="col-md-4 mt-3 mt-md-0">
-                                            <a href="#" class="button button-small button-border border-color m-0 color h-bg-color h-text-light" style="--cnvs-btn-padding-y:7px;line-height:22px;">確認優惠代碼</a>
+                                            <a href="#" class="button button-small button-border m-0" style="--cnvs-btn-padding-y:7px;line-height:22px;">確認優惠代碼</a>
                                         </div>
                                     </div>
                                 </td>
                                 <td colspan="3" class="text-md-end">
-                                    <a href="#" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light" style="background-color: #304109;">購物車更新</a>
+                                    <a href="#" class="button button-small button-3d button-border mt-2 m-md-0">購物車更新</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -132,8 +132,8 @@
                     </table>
                 </div>
 
-                <div class="col-xl-4 py-6">
-                    <div class="grid-inner bg-color bg-opacity-10 p-5 rounded-6" style="background-color: #304109;">
+                <div class="col-xl-4">
+                    <div class="grid-inner p-5 rounded-6" style="background-color: rgba(48, 65, 9, 0.2);">
                         <div class="row col-mb-30">
                             <div class="col-12">
                             <h4>結帳</h4>
@@ -143,16 +143,16 @@
                                     <tbody>
                                         <tr class="cart_item">
                                             <td class="cart-product-name">
-                                                <h5 class="mb-0">商品總金額</h5>
+                                                <h5 style="--cnvs-btn-padding-y: 6px;">商品總金額</h5>
                                             </td>
 
                                             <td class="cart-product-name text-end">
-                                                <span class="amount">$106.94</span>
+                                                <span class="amount" style="font-weight: bold;">$106.94</span>
                                             </td>
                                         </tr>
                                         <tr class="cart_item">
                                             <td class="cart-product-name">
-                                                <h5 class="mb-0">運費總金額</h5>
+                                                <h5 style="--cnvs-btn-padding-y: 6px;">運費總金額</h5>
                                             </td>
 
                                             <td class="cart-product-name text-end">
@@ -161,7 +161,7 @@
                                         </tr>
                                         <tr class="cart_item">
                                             <td class="cart-product-name">
-                                                <h5 class="mb-0">總付款金額</h5>
+                                                <h5 style="--cnvs-btn-padding-y: 6px;">總付款金額</h5>
                                             </td>
 
                                             <td class="cart-product-name text-end">
@@ -175,7 +175,7 @@
                             </div>
 
                             <div class="col-12">
-                            <a href="shop.html" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light" style="background-color: #304109;">下訂單</a>
+                            <a href="shop.html" class="button button-small button-3d button-border mt-2 m-md-0" style="background-color: #304109 color: white border-color: #304109;">下訂單</a>
                             </div>
                         </div>
                     </div>
@@ -184,6 +184,26 @@
         </div>
     </div>
 </div><!-- #content end -->
+
+<style>
+    .button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid transparent; /* 设置边框透明，以便只在悬停时显示 */
+    border-radius: 6px; /* 圆角设置 */
+    background-color: white; /* 默认背景色为白色 */
+    color: #304109; /* 默认文本颜色 */
+    transition: background-color 0.3s, border-color 0.3s; /* 添加过渡效果 */
+}
+
+.button:hover {
+    background-color: #304109; /* 悬停时背景色变为墨绿 */
+    color: white; /* 悬停时文本颜色为白色 */
+    border-color: #304109; /* 悬停时边框颜色为墨绿 */
+}
+</style>
 
 
 
