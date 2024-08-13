@@ -11,8 +11,8 @@
 					<div class="container text-center py-5">
 						<div class="emphasis-title">
 							<h1>
-								<span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn" data-speed="6000">
-									<span class="t-rotate fw-bold font-body opm-large-word">我們已收到您的訂單.|敬請期待..</span>
+                                <span class="text-rotater nocolor" data-separator="|" data-rotate="fadeIn" data-speed="6000">
+									<span class="t-rotate fw-bold font-body opm-large-word">canvas.|different.|creative.|digital.|vision.</span>
 								</span>
 							</h1>
 						</div>
