@@ -11,7 +11,7 @@
 
             <div class="row gutter-40">
                 <div class="col-xl-8">
-                    <table class="table cart mb-0">
+                    <table class="table cart mb-0 rounded-6">
                         <thead>
                             <tr>
                                 <th class="fw-normal cart-product-thumbnail">&nbsp;</th>
@@ -33,7 +33,7 @@
                                 </td>
 
                                 <td class="cart-product-name">
-                                    <a class="fw-normal" href="#">Clonza Hair Oil</a>
+                                    <a class="fw-normal" href="#">產品C</a>
                                 </td>
 
                                 <td class="cart-product-price">
@@ -42,9 +42,9 @@
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
                                     <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
+                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="2" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
                                     </div>
                                 </td>
 
@@ -67,15 +67,15 @@
                                     <a class="fw-normal" href="#">產品A</a>
                                 </td>
 
-                                <td class="cart-product-price op-05">
+                                <td class="cart-product-price">
                                     <span class="amount">$24.99</span>
                                 </td>
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
                                     <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
+                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
                                     </div>
                                 </td>
 
@@ -96,15 +96,15 @@
                                     <a class="fw-normal" href="#">產品B</a>
                                 </td>
 
-                                <td class="cart-product-price op-05">
+                                <td class="cart-product-price">
                                     <span class="amount">$13.99</span>
                                 </td>
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
                                     <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
+                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="3" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
                                     </div>
                                 </td>
 
@@ -124,7 +124,7 @@
                                     </div>
                                 </td>
                                 <td colspan="3" class="text-md-end">
-                                    <a href="#" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light">購物車更新</a>
+                                    <a href="#" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light" style="background-color: #304109;">購物車更新</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -132,68 +132,56 @@
                     </table>
                 </div>
 
-                <div class="col-xl-4">
-                    <div class="row col-mb-30">
-                        <div class="col-12">
-                            <div class="grid-inner bg-color bg-opacity-10 p-5 rounded-6">
-                                <div class="line border-color my-4 op-02"></div>
+                <div class="col-xl-4 py-6">
+                    <div class="grid-inner bg-color bg-opacity-10 p-5 rounded-6" style="background-color: #304109;">
+                        <div class="row col-mb-30">
+                            <div class="col-12">
+                            <h4>結帳</h4>
 
-                                <div class="col-xl-4 py-6">
-                                    <div class="grid-inner">
-                                        <div class="row col-mb-30">
-                                            <div class="col-12">
-                                                <h4>結帳</h4>
+                            <div class="table-responsive">
+                                <table class="table cart cart-totals">
+                                    <tbody>
+                                        <tr class="cart_item">
+                                            <td class="cart-product-name">
+                                                <h5 class="mb-0">商品總金額</h5>
+                                            </td>
 
-                                                <div class="table-responsive">
-                                                    <table class="table cart cart-totals">
-                                                        <tbody>
-                                                            <tr class="cart_item">
-                                                                <td class="cart-product-name">
-                                                                    <h5 class="mb-0">商品總金額</h5>
-                                                                </td>
+                                            <td class="cart-product-name text-end">
+                                                <span class="amount">$106.94</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="cart_item">
+                                            <td class="cart-product-name">
+                                                <h5 class="mb-0">運費總金額</h5>
+                                            </td>
 
-                                                                <td class="cart-product-name text-end">
-                                                                    <span class="amount">$106.94</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="cart_item">
-                                                                <td class="cart-product-name">
-                                                                    <h5 class="mb-0">運費總金額</h5>
-                                                                </td>
+                                            <td class="cart-product-name text-end">
+                                                <span class="amount">60</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="cart_item">
+                                            <td class="cart-product-name">
+                                                <h5 class="mb-0">總付款金額</h5>
+                                            </td>
 
-                                                                <td class="cart-product-name text-end">
-                                                                    <span class="amount">60</span>
-                                                                </td>
-                                                            </tr>
-                                                            <tr class="cart_item">
-                                                                <td class="cart-product-name">
-                                                                    <h5 class="mb-0">總付款金額</h5>
-                                                                </td>
+                                            <td class="cart-product-name text-end">
+                                                <span class="amount color lead fw-medium">$106.94</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
 
-                                                                <td class="cart-product-name text-end">
-                                                                    <span class="amount color lead fw-medium">$106.94</span>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
+                                </table>
+                            </div>
+                            </div>
 
-                                                    </table>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-12">
-                                                <a href="shop.html" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light">下訂單</a>
-                                            </div>
-                                        </div>
-                                    </div>
-						        </div>
+                            <div class="col-12">
+                            <a href="shop.html" class="button button-small button-3d button-border border-color mt-2 m-md-0 color h-bg-color h-text-light" style="background-color: #304109;">下訂單</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 </div><!-- #content end -->
 
