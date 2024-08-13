@@ -41,10 +41,10 @@
                                 </td>
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
-                                    <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
+                                    <div class="quantity" style="border-color: #3041;">
+                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="2" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
                                     </div>
                                 </td>
 
@@ -72,10 +72,10 @@
                                 </td>
 
                                 <td class="cart-product-quantity cart cart-border cart-border-2">
-                                    <div class="quantity">
-                                        <button type="button" class="minus"><i class="uil uil-minus" style="background-color: #3041;"></i></button>
+                                    <div class="quantity" style="border-color: #3041;">
+                                        <button type="button" class="minus"><i class="uil uil-minus"></i></button>
                                         <input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="qty border-0">
-                                        <button type="button" class="plus"><i class="uil uil-plus" style="background-color: #3041;"></i></button>
+                                        <button type="button" class="plus"><i class="uil uil-plus"></i></button>
                                     </div>
                                 </td>
 
@@ -119,12 +119,17 @@
                                             <input type="text" value="" class="form-control rounded-0 bg-color-2 text-center text-md-start" placeholder="輸入優惠代碼..">
                                         </div>
                                         <div class="col-md-4 mt-3 mt-md-0">
-                                            <a href="#" class="button button-small button-border m-0" style="--cnvs-btn-padding-y:7px;line-height:22px;">確認優惠代碼</a>
+                                            <a href="#" class="button button-small button-border mt-2 m-md-0" style="--cnvs-btn-padding-y:7px;line-height:22px;">確認優惠代碼</a>
                                         </div>
                                     </div>
                                 </td>
                                 <td colspan="3" class="text-md-end">
-                                    <a href="#" class="button button-small button-3d button-border mt-2 m-md-0">購物車更新</a>
+                                <a  href="#" 
+                                    class="button button-small button-border mt-2 m-md-0" 
+                                    style="background-color: white; color: black; transition: background-color 0.3s;"
+                                    onmouseover="this.style.backgroundColor='#304109'; this.style.color='white';"
+                                    onmouseout="this.style.backgroundColor='white'; this.style.color='#304109';">
+                                        購物車更新                                
                                 </td>
                             </tr>
                         </tbody>
@@ -133,7 +138,7 @@
                 </div>
 
                 <div class="col-xl-4">
-                    <div class="grid-inner p-5 rounded-6" style="background-color: rgba(48, 65, 9, 0.2);">
+                    <div class="grid-inner p-5 rounded-6" style="background-color: rgba(48, 65, 9, 0.1);">
                         <div class="row col-mb-30">
                             <div class="col-12">
                             <h4>結帳</h4>
@@ -147,7 +152,7 @@
                                             </td>
 
                                             <td class="cart-product-name text-end">
-                                                <span class="amount" style="font-weight: bold;">$106.94</span>
+                                                <span class="amount">$106.94</span>
                                             </td>
                                         </tr>
                                         <tr class="cart_item">
@@ -165,7 +170,7 @@
                                             </td>
 
                                             <td class="cart-product-name text-end">
-                                                <span class="amount color lead fw-medium">$106.94</span>
+                                                <span class="amount color lead fw-medium" style="font-weight: bold color: #304109;">$106.94</span>
                                             </td>
                                         </tr>
                                     </tbody>
