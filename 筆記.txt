@@ -22,7 +22,7 @@ git clone github專案網址
 複製一份.env.example 改為.env
 
 #啟動服務 步驟，需關掉xampp
-docker compose up 服務名稱 (nginx mysql phpmyadmin) -d	
+docker compose up nginx mariadb phpmyadmin -d
 
 /var/www 為虛擬環境
 
@@ -59,11 +59,11 @@ Step1. php artisan migrate:reset
 Step2. 刪vscode的migrate
 Step3. https://github.com/kejyun/laravel5-for-beginner-shop-laravel
 用之前的5個mi上傳到我的專案
-Step4. 從新執行php artisan migrate
+Step4. 從新執行php artisan mimigrationgrate
 
 *如果遇到建立session後重開頁面會報錯，在虛擬環境執行:
 php artisan session:table 
-php artisan migrate
+php artisan migration
 
 【CSRF保護】
 用法:
@@ -86,3 +86,8 @@ route直接用
 
 
 *test_manager 123456@gmail.com
+
+
+
+
+taskkill /PID 19808 /F
