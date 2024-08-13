@@ -4,7 +4,7 @@
 
 <!-- Content
 ============================================= -->
-<div id="content">
+<div id="content" style="background-color: #fff7ec;">
     <div class="content-wrap">
 
         <div class="container">
@@ -119,7 +119,12 @@
                                             <input type="text" value="" class="form-control rounded-0 bg-color-2 text-center text-md-start" placeholder="輸入優惠代碼..">
                                         </div>
                                         <div class="col-md-4 mt-3 mt-md-0">
-                                            <a href="#" class="button button-small button-border mt-2 m-md-0" style="--cnvs-btn-padding-y:7px;line-height:22px;">確認優惠代碼</a>
+                                            <a  href="#" 
+                                            class="button button-small button-border mt-2 m-md-0" 
+                                            style="background-color: white; color: black; transition: background-color 0.3s;"
+                                            onmouseover="this.style.backgroundColor='#304109'; this.style.color='white';"
+                                            onmouseout="this.style.backgroundColor='white'; this.style.color='#304109';">
+                                                確認優惠代碼</a>
                                         </div>
                                     </div>
                                 </td>
@@ -144,7 +149,7 @@
                             <h4>結帳</h4>
 
                             <div class="table-responsive">
-                                <table class="table cart cart-totals">
+                                <table class="table cart cart-totals"  style="background-color: transparent;">
                                     <tbody>
                                         <tr class="cart_item">
                                             <td class="cart-product-name">
@@ -170,7 +175,7 @@
                                             </td>
 
                                             <td class="cart-product-name text-end">
-                                                <span class="amount color lead fw-medium" style="font-weight: bold color: #304109;">$106.94</span>
+                                                <span class="amount color lead fw-medium" style="font-weight: bold; color: #304109;">$106.94</span>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -180,7 +185,12 @@
                             </div>
 
                             <div class="col-12">
-                            <a href="shop.html" class="button button-small button-3d button-border mt-2 m-md-0" style="background-color: #304109 color: white border-color: #304109;">下訂單</a>
+                                <a  href="/user/auth/orderFinish" 
+                                    class="button button-small button-border mt-2 m-md-0" 
+                                    style="background-color: white; color: black; transition: background-color 0.3s;"
+                                    onmouseover="this.style.backgroundColor='white'; this.style.color='#304109';"
+                                    onmouseout="this.style.backgroundColor='#304109'; this.style.color='white';">
+                                    下訂單</a>
                             </div>
                         </div>
                     </div>
@@ -189,27 +199,6 @@
         </div>
     </div>
 </div><!-- #content end -->
-
-<style>
-    .button {
-    display: inline-block;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    border: 2px solid transparent; /* 设置边框透明，以便只在悬停时显示 */
-    border-radius: 6px; /* 圆角设置 */
-    background-color: white; /* 默认背景色为白色 */
-    color: #304109; /* 默认文本颜色 */
-    transition: background-color 0.3s, border-color 0.3s; /* 添加过渡效果 */
-}
-
-.button:hover {
-    background-color: #304109; /* 悬停时背景色变为墨绿 */
-    color: white; /* 悬停时文本颜色为白色 */
-    border-color: #304109; /* 悬停时边框颜色为墨绿 */
-}
-</style>
-
 
 
 @endsection
